@@ -10,4 +10,4 @@
 
 ## その他
 
-[免責事項](./discramer.md)
+[免責事項](./disclaimer.md)
