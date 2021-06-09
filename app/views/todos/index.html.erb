@@ -1,13 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Todos</h1>
+<h1>Todo一覧</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Due date</th>
+      <th>名前</th>
+      <th>内容</th>
+      <th>締切</th>
+      <th>親Project</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,9 +19,10 @@
         <td><%= todo.name %></td>
         <td><%= todo.description %></td>
         <td><%= todo.due_date %></td>
-        <td><%= link_to 'Show', todo %></td>
-        <td><%= link_to 'Edit', edit_todo_path(todo) %></td>
-        <td><%= link_to 'Destroy', todo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= Project.find(todo.project_id).name %></td>
+        <td><%= link_to "Show", todo %></td>
+        <td><%= link_to "Edit", edit_todo_path(todo) %></td>
+        <td><%= link_to "Destroy", todo, method: :delete, data: { confirm: "Are you sure?" } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Todo', new_todo_path %>
+<%= link_to "Todoを追加", new_todo_path %>

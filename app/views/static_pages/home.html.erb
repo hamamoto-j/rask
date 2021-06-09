@@ -1,11 +1,35 @@
 <div class="center jumbotron">
-  <h1>Welcome to the Sample App</h1>
+  <h1>Rask : Todo Management Application base on GTD</h1>
 
   <h2>
-    This is the home page for the
-    SAMPLE
+    ProjectとTodoの登録，編集および削除ができます．
   </h2>
-    <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+
 </div>
 
-<%= link_to image_tag("rails.svg", alt: "Rails logo", width: "200px"), "https://rubyonrails.org/" %>
+
+  <h3>
+    Todo
+  </h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Todo名</th>
+      <th>内容</th>
+      <th>締切</th>
+      <th>親プロジェクト</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% Todo.first(3).each do |todo| %>
+      <tr>
+        <td><%= todo.name %></td>
+        <td><%= todo.description %></td>
+        <td><%= todo.due_date.day %></td>
+        <td><%= Project.find(todo.project_id).name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

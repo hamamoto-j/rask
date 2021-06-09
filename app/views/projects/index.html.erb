@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Projects</h1>
+<h1>Project一覧</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Description</th>
+      <th>名前</th>
+      <th>内容</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,9 +16,9 @@
       <tr>
         <td><%= project.name %></td>
         <td><%= project.description %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to "Show", project %></td>
+        <td><%= link_to "Edit", edit_project_path(project) %></td>
+        <td><%= link_to "Destroy", project, method: :delete, data: { confirm: "Are you sure?" } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Project', new_project_path %>
+<%= link_to "Projectを追加", new_project_path %>
