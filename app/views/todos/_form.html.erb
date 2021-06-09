@@ -31,6 +31,11 @@
     <%= form.collection_select :project_id, Project.all, :id, :name, include_blank: "---", class: "form-control" %>
   </div>
 
+  <div class="field">
+    <%= form.label :user_id, "該当ユーザ" %>
+    <%= form.collection_select :user_id, User.all, :id, :name, include_blank: "---", class: "form-control" %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
