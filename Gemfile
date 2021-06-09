@@ -59,3 +59,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Add gem
 gem 'rexml'
 gem 'bcrypt', '3.1.13'
+gem 'rails-controller-testing'

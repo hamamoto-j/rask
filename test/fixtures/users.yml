@@ -5,3 +5,7 @@ one:
 
 two:
   name: MyString
+
+michael:
+  name: Michael Example
+  password_digest: <%= User.digest('password') %>
