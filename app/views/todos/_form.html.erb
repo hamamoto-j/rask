@@ -26,6 +26,11 @@
     <%= form.datetime_select :due_date %>
   </div>
 
+  <div class="field">
+    <%= form.label :project_id, "親プロジェクト" %>
+    <%= form.collection_select :project_id, Project.all, :id, :name, include_blank: "---", class: "form-control" %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
