@@ -1,3 +1,23 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+.user_tables{
+    display: table;
+    width: 100%;
+}
+
+.user_table_c {
+    display: table-cell;
+    border: 1px solid #000;
+    table-layout: fixed;
+    width: 50%;
+    h3 {
+	border-bottom: 1px solid #000;
+	text-align: center;
+    }
+    td, th {
+	text-align: center;
+    }
+}
