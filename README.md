@@ -10,12 +10,19 @@ Project と Todo の作成，編集，削除
 
 ### Docker Image の作成
  ```
- $ docker build -t rask_image .
+ $ ./rask.sh build .
  ```
  
  ### Rask の起動
  ```
- $ docker run -td --name rask -p 3000:3000 rask_image bash
- $ docker exec rask rails s -b 0.0.0.0 -p 3000
+ $ ./rask.sh start
  ```
  
+  ### Rask の停止
+ ```
+ $ ./rask.sh stop
+ ```
+  ### Rask のコンテナイメージの削除
+ ```
+ $ ./rask.sh delete
+ ```
