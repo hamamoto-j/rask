@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get "/signup", to: "users#new"
   get "/projects", to: "projects#index"
   get "/todos", to: "todos#index"
+  get "/users", to: "users#index"
 
   resources :todos
   resources :projects
