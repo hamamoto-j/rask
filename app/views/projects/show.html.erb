@@ -10,5 +10,20 @@
   <%= @project.description %>
 </p>
 
+<p>
+  <strong>Todo:</strong>
+  <% @project.todos.each do |todo| %>
+  <%= link_to todo.name, todo %>
+  <% end %>
+</p>
+
+<p>
+  <strong>メンバ:</strong>
+  <% @project.todos.select(:user_id).distinct.each do |todo| %>
+  <%= link_to User.find_by(id: todo.user_id).name, User.find_by(id: todo.user_id) %>
+  <% end %>
+</p>
+
+
 <%= link_to "Edit", edit_project_path(@project) %> |
 <%= link_to "Back", projects_path %>

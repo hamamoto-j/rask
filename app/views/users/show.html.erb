@@ -5,5 +5,40 @@
   <%= @user.name %>
 </p>
 
+<br>
+
+<table>
+  <thead>
+    <tr>
+      <th>所属Project</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user.todos.select(:project_id).distinct.each do |project| %>
+    <tr>
+      <td><%= link_to Project.find_by(id: project.project_id).name, Project.find_by(id: project.project_id) %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<table>
+  <thead>
+    <tr>
+      <th>担当Todo</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user.todos.each do |todo| %>
+    <tr>
+      <td><%= link_to todo.name, todo %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

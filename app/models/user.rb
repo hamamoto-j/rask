@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :projects, through: :todos
+  has_many :todos
   attr_accessor :remember_token
   
   belongs_to :todo, optional: true
