@@ -51,7 +51,7 @@
         </thead>
 
         <tbody>
-          <% Todo.first(3).each do |todo| %>
+          <% Todo.order(:due_date).first(3).each do |todo| %>
             <tr>
               <td>
                 <%= todo.name %>
