@@ -49,7 +49,7 @@ class TodosController < ApplicationController
 
   # DELETE /todos/1 or /todos/1.json
   def destroy
-    @todo.destroy
+    @todo.update_attribute(:done_flag, "true")
     respond_to do |format|
       format.html { redirect_to todos_url, notice: "Todo was successfully destroyed." }
       format.json { head :no_content }
@@ -65,6 +65,6 @@ class TodosController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def todo_params
-    params.require(:todo).permit(:name, :description, :due_date, :project_id, :user_id)
+    params.require(:todo).permit(:name, :description, :due_date, :project_id, :user_id, :delete_flag)
   end
 end

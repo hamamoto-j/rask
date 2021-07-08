@@ -14,7 +14,7 @@
   </thead>
 
   <tbody>
-    <% @todos.each do |todo| %>
+    <% @todos.where(done_flag: false).each do |todo| %>
       <tr>
         <td><%= todo.name %></td>
         <td><%= todo.description %></td>
