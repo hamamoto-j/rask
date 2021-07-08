@@ -49,7 +49,10 @@ class ProjectsController < ApplicationController
 
   # DELETE /projects/1 or /projects/1.json
   def destroy
-    @project.destroy
+    @project.todos.where(done_flag: false).each do |todo|
+      todo.update_attribute(:done_flag, "true")
+    end
+    @project.update_attribute(:done_flag, "true")
     respond_to do |format|
       format.html { redirect_to projects_url, notice: "Project was successfully destroyed." }
       format.json { head :no_content }

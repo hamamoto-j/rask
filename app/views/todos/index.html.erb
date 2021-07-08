@@ -14,7 +14,7 @@
   </thead>
 
   <tbody>
-    <% @todos.where(delete_flag: false).each do |todo| %>
+    <% @todos.where(done_flag: false).each do |todo| %>
       <tr>
         <td><%= todo.name %></td>
         <td><%= todo.description %></td>
@@ -22,7 +22,7 @@
         <td><%= Project.find(todo.project_id).name %></td>
         <td><%= link_to "Show", todo %></td>
         <td><%= link_to "Edit", edit_todo_path(todo) %></td>
-        <td><%= link_to "Destroy", todo_path(todo, params: { todo: { delete_flag: true } }), method: :put, data: { confirm: "Are you sure?" } %></td>
+        <td><%= link_to "Destroy", todo, method: :delete, data: { confirm: "Are you sure?" } %></td>
       </tr>
     <% end %>
   </tbody>
